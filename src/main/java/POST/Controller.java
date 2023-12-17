@@ -19,10 +19,6 @@ public class Controller {
     }
     @PostMapping("/PostApi")
     public String post() throws NoSuchAlgorithmException, IOException {
-    	//每次调用接口都校验授权码是否有效
-    	checkAuth check =new checkAuth();
-    	boolean resule = check.checkResult();
-    	if(resule) {
     		return "{\r\n"
     				+ "    \"Response\": {\r\n"
     				+ "        \"return\": {\r\n"
@@ -33,17 +29,7 @@ public class Controller {
     				+ "    }\r\n"
     				+ "}";
     		
-    	}else {
-			return "{\r\n"
-					+ "    \"Response\": {\r\n"
-					+ "        \"return\": {\r\n"
-					+ "            \"returnCode\": \"ERROR\",\r\n"
-					+ "            \"returnDesc\": \"NODATA\",\r\n"
-					+ "            \"returnFlag\": \"0\"\r\n"
-					+ "        }\r\n"
-					+ "    }\r\n"
-					+ "}";
-    	}
+    	
     	
     }
    
